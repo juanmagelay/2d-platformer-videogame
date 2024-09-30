@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://o48a8boy4a8p"]
+
+[ext_resource type="Texture2D" uid="uid://boi4t50nb70rf" path="res://Jump (36x36).png" id="1_d7jq0"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_imieo"]
+radius = 23.0
+
+[node name="CharacterBody2D2" type="CharacterBody2D"]
+position = Vector2(368, 16)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(1.5, 1.5)
+texture = ExtResource("1_d7jq0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_imieo")
