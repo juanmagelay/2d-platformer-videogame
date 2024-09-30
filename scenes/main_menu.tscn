@@ -18,13 +18,15 @@ texture = ExtResource("1_vsqyw")
 stretch_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
-anchors_preset = 5
+anchors_preset = -1
 anchor_left = 0.5
+anchor_top = 0.352
 anchor_right = 0.5
+anchor_bottom = 0.352
 offset_left = -222.5
-offset_top = 93.0
+offset_top = -44.096
 offset_right = 222.5
-offset_bottom = 181.0
+offset_bottom = 43.904
 grow_horizontal = 2
 texture = ExtResource("2_dajls")
 
