@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://dshaeh5gcu5ld"]
+[gd_scene load_steps=18 format=4 uid="uid://dshaeh5gcu5ld"]
 
 [ext_resource type="Script" path="res://game_manager.gd" id="1_h1wrv"]
 [ext_resource type="Texture2D" uid="uid://d333ao81rtb7i" path="res://Brown.png" id="2_t80vq"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://e0xhopuv0m45" path="res://Smart Heart.png" id="9_g2mf4"]
 [ext_resource type="FontFile" uid="uid://b4fjrdaswn533" path="res://Quicksand-SemiBold.ttf" id="10_5ku0y"]
 [ext_resource type="Texture2D" uid="uid://b85lmnu8mvx8j" path="res://Cherries1.png" id="11_2lktj"]
+[ext_resource type="PackedScene" uid="uid://dlsy6npyo76ln" path="res://scenes/kill_zone.tscn" id="12_v68m8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hlpym"]
 texture = ExtResource("3_rxotd")
@@ -290,6 +291,8 @@ corner_radius_top_right = 4
 corner_radius_bottom_right = 4
 corner_radius_bottom_left = 4
 
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_5t2h8"]
+
 [node name="Node" type="Node"]
 
 [node name="GameManager" type="Node" parent="."]
@@ -459,3 +462,9 @@ theme_override_font_sizes/font_size = 24
 text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="KillZone" parent="." instance=ExtResource("12_v68m8")]
+position = Vector2(697, 726)
+
+[node name="CollisionShapeKillZone" type="CollisionShape2D" parent="KillZone"]
+shape = SubResource("WorldBoundaryShape2D_5t2h8")
