@@ -320,6 +320,7 @@ tile_set = SubResource("TileSet_ywptn")
 position = Vector2(48, 474)
 
 [node name="Camera2D" type="Camera2D" parent="SceneObjects/CharacterBody2D"]
+limit_bottom = 1000
 position_smoothing_enabled = true
 position_smoothing_speed = 7.0
 
