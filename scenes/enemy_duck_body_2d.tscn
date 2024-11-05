@@ -3,9 +3,6 @@
 [ext_resource type="Script" path="res://scenes/enemy_duck_body_2d.gd" id="1_15wwn"]
 [ext_resource type="Texture2D" uid="uid://d2b8bx5m07vf5" path="res://Idle (36x36).png" id="1_vox1f"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_imieo"]
-radius = 23.0
-
 [sub_resource type="Animation" id="Animation_mga55"]
 resource_name = "Idle"
 loop_mode = 1
@@ -44,6 +41,9 @@ _data = {
 "RESET": SubResource("Animation_62doq")
 }
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vqaoc"]
+radius = 28.0
+
 [node name="CharacterBody2D2" type="CharacterBody2D"]
 position = Vector2(368, 16)
 script = ExtResource("1_15wwn")
@@ -54,11 +54,15 @@ scale = Vector2(1.5, 1.5)
 texture = ExtResource("1_vox1f")
 hframes = 10
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1, 5)
-shape = SubResource("CircleShape2D_imieo")
-
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_3orbj")
 }
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-1, 5)
+shape = SubResource("CircleShape2D_vqaoc")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
